@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { assets } from "../assets/assets";
+import RelatedDoctors from "../components/RelatedDoctors";
 
 const Appointment = () => {
   const { docId } = useParams();
@@ -51,7 +52,7 @@ const Appointment = () => {
       while(currentDate<endTime){
         let formattedTime = currentDate.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})
 
-//add slots to arrya
+//add slots to array
 timeSlots.push({
 datetime: new Date(currentDate),
 time:formattedTime
@@ -130,6 +131,8 @@ useEffect(()=>{
           </div>
           <button className="bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6">Book an Appointment</button>
         </div>
+        {/* ----listing Related Doctors */}
+        <RelatedDoctors docId = {docId} speciality = {docInfo.speciality}/>
       </div>
     )
   );
