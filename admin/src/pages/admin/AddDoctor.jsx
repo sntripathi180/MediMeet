@@ -57,15 +57,25 @@ const onSubmitHandler = async (e) => {
 // console.log("data of created doctor",data);
 
     if(data.success){
-      toast.success(data.success)
-      console.log("inside the if block")
+      toast.success(data.message)
+      setDocImg(false)
+      setName('')
+      setPassword('')
+      setEmail('')
+      setAddress1('')
+      setAddress2('')
+      setDegree('')
+      setAbout('')
+      setFees('')
     }
     else{
       toast.error(data.message)
        console.log("inside the else block")
     }
   } catch (error) {
+    toast.error(error.message)
     console.error("Doctor creation failed",error)
+
   }
 }
 
