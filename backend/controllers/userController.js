@@ -254,5 +254,23 @@ res.json({success:false,message:error.message})
     res.json({success:false,message:error.message})
   }
 }
+//api to verify the paymont of razorpay
+const verifyRazorpay = async (req,res) => {
+  try {
+    const {razorpay_order_id} = req.body
+    const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
+    // console.log(orderInfo)
+    if(orderInfo.status === 'paid'){
+      await appointmentModel.findByIdAndUpdate(orderInfo.receipt,{payment:true})
+      res.json({success:true,message:"Payment Successful"})
+    }else{
+      res.json({success:false,message:"Payment Failed"})
+    }
 
-export { registerUser, loginUser, getProfile, updateProfile,bookAppointment,listAppointement ,cancelAppointment,paymentRazorpay};
+  } catch (error) {
+     console.log("VerifyPayment",error);
+    res.json({success:false,message:error.message})
+  }
+}
+
+export { registerUser, loginUser, getProfile, updateProfile,bookAppointment,listAppointement ,cancelAppointment,paymentRazorpay,verifyRazorpay};
