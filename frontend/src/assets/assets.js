@@ -116,7 +116,7 @@ export const doctors = [
     },
     {
         _id: 'doc3',
-        name: 'Dr. Sarah Patel',
+        name: 'Dr. Sundar Patel',
         image: doc3,
         speciality: 'Dermatologist',
         degree: 'MBBS',
@@ -289,7 +289,7 @@ export const doctors = [
         speciality: 'Dermatologist',
         degree: 'MBBS',
         experience: '1 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
+        about: 'Dr. Amelia Hill is a passionate dermatologist with a strong commitment to promoting healthy skin through preventive care, early diagnosis, and effective treatment strategies. She focuses on delivering personalized skincare solutions, addressing both medical and cosmetic concerns with expertise and care. Dr. Hill believes in educating her patients about proper skin health practices, ensuring they feel confident and supported throughout their treatment journey. She is dedicated to managing a wide range of skin conditions, from common concerns to complex cases, while helping patients achieve long-term skin wellness. Dr. Hill combines medical knowledge with compassion to provide high-quality dermatological care.',
         fees: 30,
         address: {
             line1: '37th Cross, Richmond',
